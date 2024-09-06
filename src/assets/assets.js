@@ -14,6 +14,8 @@ import code_icon from "./code_icon.png";
 import send_icon from "./send_icon.png";
 import gemini_icon from "./gemini_icon.png";
 import x_solid from "./x_solid.png";
+import day_mode from "./day-mode.png";
+import dark_mode from "./dark-mode.png";
 
 export const assets = {
   history_icon,
@@ -32,4 +34,6 @@ export const assets = {
   send_icon,
   gemini_icon,
   x_solid,
+  day_mode,
+  dark_mode,
 };

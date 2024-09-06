@@ -12,12 +12,29 @@ const Main = () => {
     resultData,
     setInput,
     input,
+    isDarkMode,
+    setIsDarkMode,
   } = useContext(Context);
   return (
-    <div className="main">
+    <div className={"main"}>
       <div className="nav">
         <p>Gemini</p>
-        <img src={assets.user_icon} alt="" />
+        <div style={{ display: "flex", gap: "10px", cursor: "pointer" }}>
+          {!isDarkMode ? (
+            <img
+              src={assets.dark_mode}
+              onClick={() => setIsDarkMode(true)}
+              alt=""
+            />
+          ) : (
+            <img
+              src={assets.day_mode}
+              onClick={() => setIsDarkMode(false)}
+              alt=""
+            />
+          )}
+          <img src={assets.user_icon} alt="" />
+        </div>
       </div>
       <div className="main-container">
         {!showResult ? (
@@ -79,7 +96,9 @@ const Main = () => {
             <div>
               <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />
-              <img onClick={() => onSent()} src={assets.send_icon} alt="" />
+              {input ? (
+                <img onClick={() => onSent()} src={assets.send_icon} alt="" />
+              ) : null}
             </div>
           </div>
           <p className="bottom-info">
